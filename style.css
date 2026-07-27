@@ -1,0 +1,435 @@
+/* 1. Configurações Globais e Variáveis de Cores */
+:root {
+    --bg-dark: #0f1016;         /* Fundo escuro principal */
+    --bg-card: #181a24;         /* Fundo dos cartões */
+    --primary: #e50914;         /* Vermelho estilo streaming para destaques */
+    --primary-hover: #b80710;   /* Vermelho escuro para efeito ao passar o mouse */
+    --text-light: #ffffff;      /* Texto principal em branco */
+    --text-muted: #a0a5b5;      /* Texto secundário em cinza */
+    --border-color: #2a2d3d;    /* Cor suave para bordas */
+}
+
+/* Reset de margens e fontes de todos os elementos */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+/* Estilo geral do corpo do site */
+body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    background-color: var(--bg-dark);
+    color: var(--text-light);
+    line-height: 1.6;
+}
+
+/* Ajuste nos links para não ficarem sublinhados */
+a {
+    text-decoration: none;
+    color: inherit;
+}
+/* 2. Estilização do Cabeçalho */
+.header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 1.2rem 5%;
+    background-color: rgba(15, 16, 22, 0.95);
+    position: sticky;
+    top: 0;
+    z-index: 100;
+    border-bottom: 1px solid var(--border-color);
+}
+
+/* Logo */
+.logo h2 {
+    font-size: 1.8rem;
+    font-weight: 700;
+}
+
+.logo span {
+    color: var(--primary);
+}
+
+/* Menu de Navegação */
+.nav-menu ul {
+    display: flex;
+    list-style: none;
+    gap: 2rem;
+}
+
+.nav-menu a {
+    color: var(--text-muted);
+    font-weight: 500;
+    transition: color 0.3s ease;
+}
+
+.nav-menu a:hover {
+    color: var(--text-light);
+}
+
+/* Botão de Destaque no Cabeçalho */
+.btn-header {
+    background-color: var(--primary);
+    color: var(--text-light);
+    padding: 0.6rem 1.2rem;
+    border-radius: 5px;
+    font-weight: bold;
+    transition: background-color 0.3s ease;
+}
+
+.btn-header:hover {
+    background-color: var(--primary-hover);
+}
+/* 3. Estilização da Hero Section */
+.hero {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    padding: 6rem 1rem;
+    background: linear-gradient(180deg, rgba(15, 16, 22, 0.8) 0%, var(--bg-dark) 100%),
+                radial-gradient(circle at center, #2a1215 0%, var(--bg-dark) 70%);
+}
+
+.hero-content {
+    max-width: 800px;
+}
+
+.hero-content h1 {
+    font-size: 2.8rem;
+    line-height: 1.2;
+    margin-bottom: 1.2rem;
+    font-weight: 800;
+}
+
+.hero-content p {
+    font-size: 1.2rem;
+    color: var(--text-muted);
+    margin-bottom: 2rem;
+}
+
+/* Container dos Botões */
+.hero-buttons {
+    display: flex;
+    justify-content: center;
+    gap: 1rem;
+    flex-wrap: wrap;
+}
+
+/* Botão Principal */
+.btn-primary {
+    background-color: var(--primary);
+    color: var(--text-light);
+    padding: 0.9rem 2rem;
+    border-radius: 6px;
+    font-size: 1.1rem;
+    font-weight: bold;
+    transition: transform 0.2s ease, background-color 0.3s ease;
+}
+
+.btn-primary:hover {
+    background-color: var(--primary-hover);
+    transform: translateY(-2px);
+}
+
+/* Botão Secundário (WhatsApp) */
+.btn-secondary {
+    background-color: transparent;
+    color: var(--text-light);
+    border: 2px solid var(--border-color);
+    padding: 0.9rem 2rem;
+    border-radius: 6px;
+    font-size: 1.1rem;
+    font-weight: bold;
+    transition: background-color 0.3s ease, border-color 0.3s ease;
+}
+
+.btn-secondary:hover {
+    background-color: var(--bg-card);
+    border-color: var(--text-muted);
+}
+/* 4. Seção de Vantagens */
+.features {
+    padding: 5rem 5%;
+    text-align: center;
+}
+
+.features h2 {
+    font-size: 2.2rem;
+    margin-bottom: 3rem;
+}
+
+/* Grade de Vantagens (CSS Grid) */
+.features-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+    gap: 2rem;
+}
+
+/* Cartão de Vantagem Individual */
+.feature-card {
+    background-color: var(--bg-card);
+    border: 1px solid var(--border-color);
+    padding: 2.5rem 1.5rem;
+    border-radius: 12px;
+    transition: transform 0.3s ease, border-color 0.3s ease;
+}
+
+.feature-card:hover {
+    transform: translateY(-5px);
+    border-color: var(--primary);
+}
+
+.feature-icon {
+    font-size: 2.5rem;
+    margin-bottom: 1rem;
+}
+
+.feature-card h3 {
+    font-size: 1.3rem;
+    margin-bottom: 0.8rem;
+}
+
+.feature-card p {
+    color: var(--text-muted);
+    font-size: 0.95rem;
+}
+/* 5. Seção de Planos e Preços */
+.plans {
+    padding: 5rem 5%;
+    text-align: center;
+    background-color: rgba(24, 26, 36, 0.4);
+}
+
+.plans h2 {
+    font-size: 2.2rem;
+    margin-bottom: 0.5rem;
+}
+
+.plans-subtitle {
+    color: var(--text-muted);
+    margin-bottom: 3rem;
+}
+
+/* Grade dos Planos */
+.plans-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 2rem;
+    max-width: 1100px;
+    margin: 0 auto;
+    align-items: center;
+}
+
+/* Cartão Padrão de Plano */
+.plan-card {
+    background-color: var(--bg-card);
+    border: 1px solid var(--border-color);
+    border-radius: 12px;
+    padding: 2.5rem 1.8rem;
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    height: 100%;
+}
+
+.plan-card h3 {
+    font-size: 1.5rem;
+    margin-bottom: 1rem;
+}
+
+.price {
+    font-size: 2.5rem;
+    font-weight: 800;
+    color: var(--text-light);
+    margin-bottom: 0.3rem;
+}
+
+.price span {
+    font-size: 1rem;
+    color: var(--text-muted);
+    font-weight: normal;
+}
+
+.billing-info {
+    font-size: 0.85rem;
+    color: var(--text-muted);
+    margin-bottom: 1.5rem;
+}
+
+/* Lista de Recursos do Plano */
+.plan-card ul {
+    list-style: none;
+    margin: 1.5rem 0 2rem 0;
+    text-align: left;
+    flex-grow: 1;
+}
+
+.plan-card li {
+    padding: 0.6rem 0;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.05);
+    color: var(--text-muted);
+    font-size: 0.95rem;
+}
+
+.plan-card li::before {
+    content: "✓ ";
+    color: var(--primary);
+    font-weight: bold;
+}
+
+/* Botão de Assinatura */
+.btn-plan {
+    background-color: transparent;
+    color: var(--text-light);
+    border: 1px solid var(--border-color);
+    padding: 0.8rem 1.5rem;
+    border-radius: 6px;
+    font-weight: bold;
+    transition: all 0.3s ease;
+}
+
+.btn-plan:hover {
+    background-color: var(--text-light);
+    color: var(--bg-dark);
+}
+
+/* --- DESTAQUE PARA O PLANO MAIS POPULAR --- */
+.plan-card.featured {
+    border: 2px solid var(--primary);
+    box-shadow: 0 0 20px rgba(229, 9, 20, 0.25);
+    transform: scale(1.03);
+}
+
+.badge {
+    position: absolute;
+    top: -12px;
+    left: 50%;
+    transform: translateX(-50%);
+    background-color: var(--primary);
+    color: var(--text-light);
+    padding: 0.2rem 1rem;
+    border-radius: 20px;
+    font-size: 0.8rem;
+    font-weight: bold;
+    text-transform: uppercase;
+}
+
+.btn-featured {
+    background-color: var(--primary);
+    border-color: var(--primary);
+}
+
+.btn-featured:hover {
+    background-color: var(--primary-hover);
+    border-color: var(--primary-hover);
+    color: var(--text-light);
+}
+/* 6. Seção de FAQ (Perguntas Frequentes) */
+.faq {
+    padding: 5rem 5%;
+    max-width: 800px;
+    margin: 0 auto;
+}
+
+.faq h2 {
+    font-size: 2.2rem;
+    text-align: center;
+    margin-bottom: 2.5rem;
+}
+
+.faq-container {
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+}
+
+.faq-item {
+    background-color: var(--bg-card);
+    border: 1px solid var(--border-color);
+    border-radius: 8px;
+    padding: 1rem 1.5rem;
+    cursor: pointer;
+    transition: border-color 0.3s ease;
+}
+
+.faq-item:hover {
+    border-color: var(--text-muted);
+}
+
+.faq-item summary {
+    font-weight: 600;
+    font-size: 1.1rem;
+    list-style: none; /* Remove a setinha padrão do navegador */
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+/* Criando uma setinha customizada via CSS */
+.faq-item summary::after {
+    content: "＋";
+    font-size: 1.2rem;
+    color: var(--primary);
+}
+
+/* Quando o FAQ estiver aberto, muda o sinal para menos */
+.faq-item[open] summary::after {
+    content: "－";
+}
+
+.faq-item p {
+    margin-top: 1rem;
+    color: var(--text-muted);
+    font-size: 0.95rem;
+    line-height: 1.5;
+}
+
+/* 7. Rodapé (Footer) */
+.footer {
+    background-color: #08090c;
+    border-top: 1px solid var(--border-color);
+    padding: 2.5rem 5%;
+    text-align: center;
+    color: var(--text-muted);
+    font-size: 0.85rem;
+}
+
+.footer-content p {
+    margin-bottom: 0.5rem;
+}
+
+/* 8. Responsividade para Celulares (Media Queries) */
+@media (max-width: 768px) {
+    /* Ajustes no Cabeçalho */
+    .header {
+        flex-direction: column;
+        gap: 1rem;
+        padding: 1rem;
+    }
+
+    .nav-menu ul {
+        gap: 1rem;
+        font-size: 0.9rem;
+    }
+
+    /* Ajustes nos Títulos e Seção Hero */
+    .hero {
+        padding: 4rem 1rem;
+    }
+
+    .hero-content h1 {
+        font-size: 2rem;
+    }
+
+    .hero-content p {
+        font-size: 1rem;
+    }
+
+    /* Ajustes no destaque do Plano Anual no celular */
+    .plan-card.featured {
+        transform: scale(1); /* No celular, mantemos o tamanho normal para não estourar a tela */
+    }
+}
